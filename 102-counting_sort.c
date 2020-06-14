@@ -15,9 +15,13 @@ void counting_sort(int *array, size_t size)
 	int *p = NULL;
 	int *aux = NULL;
 
+	if (size < 2)
+		return;
+
 	aux = malloc(sizeof(int) * size);
 	if (aux == NULL)
 		return;
+
 	k = 0;
 	for (i = 0; i < size; i++)
 	{
@@ -26,9 +30,13 @@ void counting_sort(int *array, size_t size)
 			k = array[i];
 	}
 	k = k + 1;
+
 	p = malloc(sizeof(int) * k);
 	if (p == NULL)
+	{
+		free(aux);
 		return;
+	}
 
 	for (i = 0; i < size; i++)
 		p[array[i]]++;
