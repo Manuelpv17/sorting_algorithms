@@ -10,10 +10,10 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	size_t low = 0, hight = size - 1;
+	size_t low = 0, high = size - 1;
 
-	if (low < hight)
-		quick_aux(array, size, low, hight);
+	if (high > low)
+		quick_aux(array, size, low, high);
 }
 
 /**
@@ -32,7 +32,7 @@ void quick_aux(int *array, size_t size, size_t low, size_t high)
 	if (low >= high)
 		return;
 
-	for (j = low; j < high; j++)
+	for (j = low; j < high + 1; j++)
 	{
 		if (array[j] < array[high])
 		{
