@@ -27,7 +27,7 @@ void quick_sort(int *array, size_t size)
 void quick_aux(int *array, size_t size, size_t low, size_t high)
 {
 	size_t j;
-	long int i = low - 1;
+	size_t i = low;
 	size_t aux;
 
 	if (low >= high)
@@ -37,18 +37,18 @@ void quick_aux(int *array, size_t size, size_t low, size_t high)
 	{
 		if (array[j] < array[high])
 		{
-			i++;
-			if ((long int)j != i)
+			if (array[j] != array[i])
 			{
 				aux = array[j];
 				array[j] = array[i];
 				array[i] = aux;
 				print_array(array, size);
 			}
+			i++;
 		}
 	}
-	i++;
-	if ((long int)j != i)
+
+	if (array[j] != array[i])
 	{
 		aux = array[i];
 		array[i] = array[high];
