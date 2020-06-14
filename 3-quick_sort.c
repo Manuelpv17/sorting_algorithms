@@ -54,6 +54,6 @@ void quick_aux(int *array, size_t size, size_t low, size_t high)
 	if ((long int)low < i - 1)
 		quick_aux(array, size, low, i - 1);
 
-	if ((long int)high > i + 1)
+	if ((long int)high > i)
 		quick_aux(array, size, i + 1, high);
 }
