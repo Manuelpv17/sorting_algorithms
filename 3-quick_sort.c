@@ -30,6 +30,9 @@ void quick_aux(int *array, size_t size, size_t low, size_t high)
 	long int i = low - 1;
 	size_t aux;
 
+	if (low >= high)
+		return;
+
 	for (j = low; j < high; j++)
 	{
 		if (array[j] < array[high])
@@ -53,9 +56,8 @@ void quick_aux(int *array, size_t size, size_t low, size_t high)
 		print_array(array, size);
 	}
 
-	if ((long int)low < i - 1)
+	if (i > 0)
 		quick_aux(array, size, low, i - 1);
 
-	if ((long int)high > i + 1)
-		quick_aux(array, size, i + 1, high);
+	quick_aux(array, size, i + 1, high);
 }
