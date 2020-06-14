@@ -35,7 +35,7 @@ void quick_aux(int *array, size_t size, size_t low, size_t high)
 	{
 		if (array[j] < array[high])
 		{
-			if (j != i)
+			if (array[j] != array[i])
 			{
 				aux = array[j];
 				array[j] = array[i];
@@ -45,7 +45,7 @@ void quick_aux(int *array, size_t size, size_t low, size_t high)
 			i++;
 		}
 	}
-	if (j != i)
+	if (array[high] != array[i])
 	{
 		aux = array[i];
 		array[i] = array[high];
