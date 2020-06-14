@@ -20,10 +20,12 @@ void cocktail_sort_list(listint_t **list)
 
 	n = listint_len(*list);
 
+	if (n < 2)
+		return;
+
 	b = *list;
 	for (i = 0; i < n; i++)
 	{
-
 		for (f = b->next; f->next != NULL; f = f->next)
 		{
 			if (f->prev->n > f->n)
