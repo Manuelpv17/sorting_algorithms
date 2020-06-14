@@ -13,8 +13,11 @@ void counting_sort(int *array, size_t size)
 	int j;
 	int k;
 	int *p = NULL;
-	int aux[size];
+	int *aux = NULL;
 
+	aux = malloc(sizeof(int) * size);
+	if (aux == NULL)
+		return;
 	k = 0;
 	for (i = 0; i < size; i++)
 	{
