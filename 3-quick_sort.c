@@ -10,8 +10,6 @@
  */
 void quick_sort(int *array, size_t size)
 {
-	if (array == NULL)
-		return;
 
 	if (size > 1)
 		quick_aux(array, size, 0, size - 1);
@@ -53,9 +51,9 @@ void quick_aux(int *array, size_t size, size_t low, size_t high)
 		print_array(array, size);
 	}
 
-	if ((long int)high > i + 1)
-		quick_aux(array, size, i + 1, high);
-
 	if ((long int)low < i - 1)
 		quick_aux(array, size, low, i - 1);
+
+	if ((long int)high > i + 1)
+		quick_aux(array, size, i + 1, high);
 }
