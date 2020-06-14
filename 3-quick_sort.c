@@ -1,7 +1,12 @@
 #include "sort.h"
 
 /**
- * 
+ * quick_sort - sorts an array list of integers in ascending
+ * order using the quick_sort lomuto algorithm
+ * print the list after each
+ *  time you swap two elements
+ * @array: Array to be sorted
+ * @size: Size of Array
  */
 void quick_sort(int *array, size_t size)
 {
@@ -11,6 +16,13 @@ void quick_sort(int *array, size_t size)
 		quick_aux(array, size, low, hight);
 }
 
+/**
+ * quick_aux - recursion function in quick sort lomuto
+ * @array: Array to be sorted
+ * @size: Size of Array
+ * @low: inferior limit of array
+ * @high: Superior limit of array
+ */
 void quick_aux(int *array, size_t size, size_t low, size_t high)
 {
 	size_t i = low;

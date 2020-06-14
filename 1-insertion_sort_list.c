@@ -1,5 +1,12 @@
 #include "sort.h"
 
+/**
+ * insertion_sort_list - sorts an linked list of integers in ascending
+ * order using the insertion_sort_list algorithm
+ * print the list after each
+ *  time you swap two elements
+ * @list: List to be sorted
+ */
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *f = NULL;
@@ -37,5 +44,4 @@ void insertion_sort_list(listint_t **list)
 				break;
 		}
 	}
-	//printf("value: %d\n", f->n);
 }
