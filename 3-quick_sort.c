@@ -11,7 +11,7 @@
 void quick_sort(int *array, size_t size)
 {
 
-	if (size > 0)
+	if (size > 1)
 		quick_aux(array, size, 0, size - 1);
 }
 
