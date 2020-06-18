@@ -24,6 +24,8 @@ void print_array(const int *array, size_t size);
 void quick_aux(int *array, size_t size, size_t low, size_t high);
 void top_down_merge(int *array, int *copy, size_t low, size_t high);
 void counting_sort_radix(int *array, size_t size, long int e);
+void bitonic_merge(int *array, size_t low, size_t s, int dir);
+void bitonic_recursion(int *array, size_t size, size_t low, size_t s, int dir);
 
 void bubble_sort(int *array, size_t size);
 void insertion_sort_list(listint_t **list);
