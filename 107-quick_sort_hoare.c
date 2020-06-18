@@ -33,7 +33,7 @@ void quick_aux_hoare(int *array, size_t size, size_t low, size_t high)
 	if (low >= high)
 		return;
 
-	while (l != r)
+	while (l < r)
 	{
 		if (array[l] > array[r])
 		{
@@ -43,9 +43,13 @@ void quick_aux_hoare(int *array, size_t size, size_t low, size_t high)
 			print_array(array, size);
 
 			if (flag == 0)
+			{
 				flag = 1;
+			}
 			else
+			{
 				flag = 0;
+			}
 		}
 
 		if (flag == 0)
@@ -54,7 +58,8 @@ void quick_aux_hoare(int *array, size_t size, size_t low, size_t high)
 			r--;
 	}
 
-	if (r - 1 > 0)
+	if (r - 1 > (int)low)
 		quick_aux_hoare(array, size, low, r - 1);
-	quick_aux_hoare(array, size, r + 1, high);
+	if ((int)high > r + 1)
+		quick_aux_hoare(array, size, r + 1, high);
 }
