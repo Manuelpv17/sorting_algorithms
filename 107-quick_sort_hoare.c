@@ -25,41 +25,33 @@ void quick_sort_hoare(int *array, size_t size)
  */
 void quick_aux_hoare(int *array, size_t size, size_t low, size_t high)
 {
-	long int l = low;
-	long int r = high;
+	long int l = low - 1;
+	long int r = high + 1;
 	size_t aux;
-	int flag = 0;
+	int current = array[high];
 
 	if (low >= high)
 		return;
 
 	while (l < r)
 	{
-		if (array[l] > array[r])
+		l++;
+		while (array[l] < current)
+			l++;
+		r--;
+		while (array[r] > current)
+			r--;
+
+		if (l < r)
 		{
 			aux = array[l];
 			array[l] = array[r];
 			array[r] = aux;
 			print_array(array, size);
-
-			if (flag == 0)
-			{
-				flag = 1;
-			}
-			else
-			{
-				flag = 0;
-			}
 		}
-
-		if (flag == 0)
-			l++;
-		else if (flag == 1)
-			r--;
 	}
 
-	if (r - 1 > (int)low)
-		quick_aux_hoare(array, size, low, r - 1);
-	if ((int)high > r + 1)
-		quick_aux_hoare(array, size, r + 1, high);
+	if (r - 1 >= 0)
+		quick_aux_hoare(array, size, low, l - 1);
+	quick_aux_hoare(array, size, l, high);
 }
