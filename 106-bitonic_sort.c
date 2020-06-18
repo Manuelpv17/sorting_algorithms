@@ -47,9 +47,9 @@ void bitonic_recursion(int *array, size_t size, size_t low, size_t s, int dir)
 		bitonic_merge(array, low, s, dir);
 
 		if (dir == 1)
-			printf("Result [%ld/%ld] (UP)\n", s, size);
+			printf("Result [%ld/%ld] (UP):\n", s, size);
 		else
-			printf("Result [%ld/%ld] (DOWN)\n", s, size);
+			printf("Result [%ld/%ld] (DOWN):\n", s, size);
 		print_array(array + low, s);
 	}
 }
